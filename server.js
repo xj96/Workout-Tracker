@@ -1,4 +1,13 @@
 // Dependencies
 const express = require("express");
-const mongoose = require("mongoose");
-const morgan = require("morgan");
+const logger = require("morgan");
+const mongojs = require("mongojs");
+const app = express();
+
+app.use(logger("dev"));
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static("public"));
+
+
