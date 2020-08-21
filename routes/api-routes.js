@@ -1,5 +1,5 @@
 const db = require("../models");
-const Workout = db.Workout;
+const Workout = require("../models/workout");
 
 module.exports = function (app) {
   // create workout
