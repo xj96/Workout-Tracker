@@ -25,4 +25,15 @@ module.exports = function (app) {
         res.json(err);
       });
   });
+
+  // retrieve workouts
+  app.get("/api/workouts", (req, res) => {
+    Workout.find({})
+      .then((dbWorkout) => {
+        res.json(dbWorkout);
+      })
+      .catch((err) => {
+        res.json(err);
+      });
+  });
 };
